@@ -10,10 +10,10 @@ pipeline {
                 }
             } */
             steps {
-                sh 'go version'
                 dir('bugtracker-backend') {
                     sh 'go test -v ./...'
                 }
+                /* sh 'go version' */
             }
         }
     }
