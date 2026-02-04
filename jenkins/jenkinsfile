@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    tools { go '1.19'}
+    tools { 
+        go 'go-installation'
+        }
     stages {
         stage('Unit Tests - Backend') {
 /*             agent {
