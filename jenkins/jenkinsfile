@@ -5,18 +5,33 @@ pipeline {
         }
     stages {
         stage('Unit Tests - Backend') {
-/*             agent {
-                docker {
-                    image 'snakee/golang-junit:1.21'
-                    reuseNode true
-                }
-            } */
+            // agent {
+            //     docker {
+            //         image 'snakee/golang-junit:1.21'
+            //         reuseNode true
+            //     }
+            // }
             steps {
                 dir('bugtracker-backend') {
                     sh 'go test -v ./...'
                 }
-                /* sh 'go version' */
             }
         }
+        stage('Unit Tests - Frontend') {
+            agent {
+                docker {
+                    image: 'node:20-alpine'
+                    reuseNode true
+                }
+            }
+            steps {
+                dir('bugtracker-frontend') {
+                    sh '''
+                        npm ci
+                        npm test
+                    '''
+                }
+            }
+        }      
     }
 }
