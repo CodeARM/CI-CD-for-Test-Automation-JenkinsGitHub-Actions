@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    tools { go '1.19'}
     stages {
         stage('Unit Tests - Backend') {
 /*             agent {
@@ -9,6 +9,7 @@ pipeline {
                     reuseNode true
                 }
             } */
+            sh 'go version'
             steps {
                 dir('bugtracker-backend') {
                     sh 'go test -v ./...'
