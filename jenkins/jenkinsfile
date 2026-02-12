@@ -64,6 +64,7 @@ pipeline {
                 sh 'npx playwright test'
             }
         }
+    }
     post {
         always {
             cleanWs()
