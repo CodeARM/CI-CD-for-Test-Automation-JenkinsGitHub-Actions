@@ -48,8 +48,8 @@ pipeline {
                 sh 'docker compose up --build -d'
             }
         }
-        stage('API Tests')
-            agent{
+        stage('API Tests') {
+            agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.50.0-jammy'
                     reuseNode true
@@ -63,7 +63,7 @@ pipeline {
                 sh 'npm ci'
                 sh 'npx playwright test'
             }
-    }
+        }
     post {
         always {
             cleanWs()
