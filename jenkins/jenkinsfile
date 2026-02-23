@@ -88,10 +88,6 @@ pipeline {
                 reportFiles: 'index.html'
                 reportName: 'Playwright API Test Report'
             }
-        }
-    }
-    post {
-        always {
             cleanWs()
         }
     }
