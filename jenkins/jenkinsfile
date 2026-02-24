@@ -86,7 +86,7 @@ pipeline {
             publishHTML([
                 reportDir: 'tests-api/playwright-report',
                 reportFiles: 'index.html',
-                reportName: 'Playwright API Test Report'
+                reportName: 'Playwright API Test Report',
                 keepAll: true,
                 alwaysLinkToLastBuild: true,
                 allowMissing: false
