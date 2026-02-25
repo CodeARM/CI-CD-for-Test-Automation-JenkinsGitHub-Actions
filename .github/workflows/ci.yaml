@@ -65,7 +65,7 @@ jobs:
 
                 echo "## Frontend Test Coverage Report" >> $GITHUB_STEP_SUMMARY
                 echo '```' >> $GITHUB_STEP_SUMMARY
-                cat full_output.txt >> $GITHUB_STEP SUMMARY
+                cat full_output.txt >> $GITHUB_STEP_SUMMARY
                 echo '```' >> $GITHUB_STEP_SUMMARY
 
 
